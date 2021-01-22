@@ -96,11 +96,11 @@ if (message.attachments.size > 0) {
 }
 		}
         if (message.channel.id != 802116191019597844) {
-		if (message.content.startsWith('!p') || message.content.startsWith('!play') || message.content.startsWith('!P') || message.content.startsWith('!PLAY') ||message.content.startsWith('!song') || message.content.startsWith('!SONG')){
+		if (message.content.startsWith('!queue')| message.content.startsWith('!q') || message.content.startsWith('!lyrics') || message.content.startsWith('!p') || message.content.startsWith('!play') || message.content.startsWith('!P') || message.content.startsWith('!PLAY') ||message.content.startsWith('!song') || message.content.startsWith('!SONG')){
 			message.reply("Pomyliłeś kanały" + " <#802116191019597844>") .then(message => {
     message.delete({ timeout: 10000 })
   })
-		
+		message.send('!remove last');
 			message.delete();
 			
 		   	return;
