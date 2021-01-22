@@ -89,8 +89,9 @@ client.on('message', message => {
         if (message.channel.id == 802115960432492555){
 		if (message.content.startsWith('!p') || message.content.startsWith('!play') || message.content.startsWith('!P') || message.content.startsWith('!PLAY')){
 			message.reply("Pomyliłeś kanały" + " <#802116191019597844>");
-			message.channel.bulkDelete(1);
+		
 			message.delete();
+			message.channel.bulkDelete(1);
 		   	return;
 		    }
         }
