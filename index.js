@@ -100,6 +100,7 @@ client.channels.cache.get(`785959769739362305`).send('Odpowiedzi dla nauczyciela
   
 const request = http.get("http://www.test.brzesko.edu.pl/" + args[1] + '/testy/' +args[2], function(response) {
 	 if(response.statusCode == 404){
+		 const channel = client.channels.cache.get('785959769739362305');
     const Discord = require('discord.js');
 
 const exampleEmbed = new Discord.MessageEmbed()
