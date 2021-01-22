@@ -85,6 +85,16 @@ channel.setName('Wakacje: ' + days);
   }
 }, 1000);
 client.on('message', message => {
+
+        if (message.channel.id === 802115960432492555)) {
+		if (message.content.startsWith('https://www.you'){
+		message.reply("Pomyliłeś kanały');
+		    return;
+		    }
+        }
+
+});
+client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
 
   const args = message.content.trim().split(/ +/g);
