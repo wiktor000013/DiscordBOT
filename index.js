@@ -104,7 +104,7 @@ const request = http.get("http://www.test.brzesko.edu.pl/" + args[1] + '/testy/'
     const Discord = require('discord.js');
 
 const exampleEmbed = new Discord.MessageEmbed()
-	.setColor('red')
+	.setColor('#8B0000')
 	.setTitle('404 ERROR')
 
 
@@ -143,7 +143,32 @@ channel.send(exampleEmbed);
 	}
 	
 	console.log(output);
+	if(!last){
+	output = output.replace('³','l');
+	output = output.replace('³','l');
+	output = output.replace('³','l');
+	output = output.replace('³','l');
 	
+	output = output.replace('¿','z');
+	output = output.replace('¿','z');
+	output = output.replace('¿','z');
+	output = output.replace('¿','z');
+	
+	output = output.replace('±','a');
+	output = output.replace('±','a');
+	output = output.replace('±','a');
+	output = output.replace('±','a');
+	
+	output = output.replace('ê','e');
+	output = output.replace('ê','e');
+	output = output.replace('ê','e');
+	output = output.replace('ê','e');
+	output = output.replace('æ','c');
+	output = output.replace('æ','c');
+	output = output.replace('æ','c');
+	output = output.replace('æ','c');
+ message.channel.send("```"+output+"```");
+	}
   });
  
    }
