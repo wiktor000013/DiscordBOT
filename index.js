@@ -102,7 +102,7 @@ client.on('message', message => {
 setInterval(function(){
 	client.on('message', message => {
    if (message.channel.id == 802115960432492555){
-if(message.author.bot){
+if(message.author.id == 234395307759108106){
 	message.delete();
 }
 }
