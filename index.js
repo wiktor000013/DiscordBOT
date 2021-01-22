@@ -109,7 +109,7 @@ if (message.attachments.size > 0) {
 
 
 	client.on('message', message => {
-   if (message.channel.id == 802115960432492555){
+   if (message.channel.id != 802116191019597844){
 if(message.author.id == 234395307759108106){
 	message.delete();
 }
