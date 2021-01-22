@@ -74,9 +74,7 @@ var x = setInterval(function() {
 
   // Display the result in the element with id="demo"
   console.log(days);
-var channel = client.channels.cache.get('802126945252278294');
 
-channel.setName('Wakacje: ' + days);
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
