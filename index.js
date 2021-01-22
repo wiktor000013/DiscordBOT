@@ -91,7 +91,8 @@ client.on('message', message => {
 			message.reply("Pomyliłeś kanały" + " <#802116191019597844>");
 		
 			message.delete();
-			message.channel.bulkDelete(1);
+			setTimeout(function(){
+			message.channel.bulkDelete(1)},500);
 		   	return;
 		    }
         }
