@@ -176,4 +176,4 @@ channel.send((' ``` '+args[0]+'\n Haslo: '+line + '```'));
 
   
 
-client.login('ODAxNTM5Njg5MzM2Mjc0OTQ0.YAiKAQ.6DaEH2gvOSbheUy8QW53DKarK7g');
+client.login('ODAyMjIxNjA5NTQ5MTY4NjYw.YAsFGA._oI8eeaS8fz22KTbtTQlrxAN4Mg');
