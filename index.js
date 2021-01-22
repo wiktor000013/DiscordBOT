@@ -15,7 +15,6 @@ const prefix = '!';
 // })
 
 client.on('ready', () => {
-	client.user.setActivity("+5"); 
 const embed = new Discord.MessageEmbed()
 
   .setTitle("Link do wtyczki")
@@ -99,6 +98,21 @@ client.channels.cache.get(`785959769739362305`).send('Odpowiedzi dla nauczyciela
     // command code
   
 const request = http.get("http://www.test.brzesko.edu.pl/" + args[1] + '/testy/' +args[2], function(response) {
+ if(response.statusCode == 404){
+    const Discord = require('discord.js');
+
+const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('red')
+	.setTitle('404 ERROR')
+
+
+	.setDescription('Nie znaleziono testu')
+
+	.setTimestamp()
+	
+
+channel.send(exampleEmbed);
+   }else{
 	response.setEncoding('latin1');
 	response.pipe(file);
 	
@@ -128,6 +142,30 @@ const request = http.get("http://www.test.brzesko.edu.pl/" + args[1] + '/testy/'
 	
 	console.log(output);
 	if(!last){
+	output = output.replace('³','l');
+	output = output.replace('³','l');
+	output = output.replace('³','l');
+	output = output.replace('³','l');
+	
+	output = output.replace('¿','z');
+	output = output.replace('¿','z');
+	output = output.replace('¿','z');
+	output = output.replace('¿','z');
+	
+	output = output.replace('±','a');
+	output = output.replace('±','a');
+	output = output.replace('±','a');
+	output = output.replace('±','a');
+	
+	output = output.replace('ê','e');
+	output = output.replace('ê','e');
+	output = output.replace('ê','e');
+	output = output.replace('ê','e');
+	
+	output = output.replace('æ','c');
+	output = output.replace('æ','c');
+	output = output.replace('æ','c');
+	output = output.replace('æ','c');
 
  message.channel.send("```"+output+"```");
 	}
@@ -135,7 +173,7 @@ const request = http.get("http://www.test.brzesko.edu.pl/" + args[1] + '/testy/'
  
 
 
-
+}
 
 });
 };
@@ -176,4 +214,4 @@ channel.send((' ``` '+args[0]+'\n Haslo: '+line + '```'));
 
   
 
-client.login('ODAyMjIxNjA5NTQ5MTY4NjYw.YAsFGA._oI8eeaS8fz22KTbtTQlrxAN4Mg');
+client.login('ODAxNTM5Njg5MzM2Mjc0OTQ0.YAiKAQ.6DaEH2gvOSbheUy8QW53DKarK7g');
