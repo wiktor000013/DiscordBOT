@@ -100,7 +100,7 @@ if (message.attachments.size > 0) {
 			message.reply("Pomyliłeś kanały" + " <#802116191019597844>") .then(message => {
     message.delete({ timeout: 10000 })
   })
-		message.send('!remove last');
+		
 			message.delete();
 			
 		   	return;
