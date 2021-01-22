@@ -145,7 +145,7 @@ channel.send(exampleEmbed);
 	
   });
  
-
+   }
 
 
 
