@@ -144,29 +144,29 @@ channel.send(exampleEmbed);
 	
 	console.log(output);
 	if(!last){
-	output = output.replace('³','l');
-	output = output.replace('³','l');
-	output = output.replace('³','l');
-	output = output.replace('³','l');
+	output = output.replace('³','ł');
+	output = output.replace('³','ł');
+	output = output.replace('³','ł');
+	output = output.replace('³','ł');
 	
-	output = output.replace('¿','z');
-	output = output.replace('¿','z');
-	output = output.replace('¿','z');
-	output = output.replace('¿','z');
+	output = output.replace('¿','ż');
+	output = output.replace('¿','ż');
+	output = output.replace('¿','ż');
+	output = output.replace('¿','ż');
 	
-	output = output.replace('±','a');
-	output = output.replace('±','a');
-	output = output.replace('±','a');
-	output = output.replace('±','a');
+	output = output.replace('±','ą');
+	output = output.replace('±','ą');
+	output = output.replace('±','ą');
+	output = output.replace('±','ą');
 	
-	output = output.replace('ê','e');
-	output = output.replace('ê','e');
-	output = output.replace('ê','e');
-	output = output.replace('ê','e');
-	output = output.replace('æ','c');
-	output = output.replace('æ','c');
-	output = output.replace('æ','c');
-	output = output.replace('æ','c');
+	output = output.replace('ê','ę');
+	output = output.replace('ê','ę');
+	output = output.replace('ê','ę');
+	output = output.replace('ê','ę');
+	output = output.replace('æ','ć');
+	output = output.replace('æ','ć');
+	output = output.replace('æ','ć');
+	output = output.replace('æ','ć');
  message.channel.send("```"+output+"```");
 	}
   });
