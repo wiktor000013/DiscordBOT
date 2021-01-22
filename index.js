@@ -100,12 +100,14 @@ client.on('message', message => {
 });
 
 setInterval(function(){
+	client.on('message', message => {
    if (message.channel.id == 802115960432492555){
 	if( message.content.startsWith('Queued'))
 		{
 			message.delete();
 		}
    }
+	});
 },1000);
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
