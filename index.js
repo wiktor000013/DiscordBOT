@@ -15,6 +15,7 @@ const prefix = '!';
 // })
 
 client.on('ready', () => {
+	client.user.setActivity("+5"); 
 const embed = new Discord.MessageEmbed()
 
   .setTitle("Link do wtyczki")
