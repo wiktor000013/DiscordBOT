@@ -94,7 +94,7 @@ if (message.attachments.size > 0) {
     
 }
 		}
-        if (message.channel.id != 802115960432492555) || (message.channel.id != 802119771549597696) {
+        if (message.channel.id != 802115960432492555 || message.channel.id != 802119771549597696) {
 		if (message.content.startsWith('!p') || message.content.startsWith('!play') || message.content.startsWith('!P') || message.content.startsWith('!PLAY') ||message.content.startsWith('!song') || message.content.startsWith('!SONG')){
 			message.reply("Pomyliłeś kanały" + " <#802116191019597844>");
 		
