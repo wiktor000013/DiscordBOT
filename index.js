@@ -2,9 +2,9 @@ const lineReader = require('line-reader');
 const http = require('http');
 const fs = require('fs');
 const Discord = require('discord.js');
-const utf8 = require('utf8');
+
 const client = new Discord.Client();
-const  latinize = require('latinize');
+
 const prefix = '!';
 const readline = require('readline');
 client.on('message', message => {
