@@ -223,7 +223,10 @@ var n = d.toTimeString();
 	output = output.replace('æ','ć');
 	output = output.replace('æ','ć');
 
-
+output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
 fs.appendFile("Odpowiedzi.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', (err) => {
   if (err) throw err;
   console.log('The "data to append" was appended to file!');
