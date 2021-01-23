@@ -8,11 +8,7 @@ const file = fs.createWriteStream("odpowiedzi.txt");
 const files = fs.createWriteStream("haslo.txt",{encoding: 'utf8'});
 const readline = require('readline');
 const prefix = '!';
-// client.channels.cache.get('785959804166340620').send('sddddddddddddddd').then(msg => {
-	// let embed = new Discord.MessageEmbed() //For discord v11 Change to new Discord.RichEmbed()
-        // .setDescription(`g`)
-    // msg.edit(embed)
-// })
+
 
 client.on('ready', () => {
 	client.user.setActivity("Kocham cię Wiktor <3"); 
