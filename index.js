@@ -8,7 +8,11 @@ const file = fs.createWriteStream("odpowiedzi.txt");
 const files = fs.createWriteStream("haslo.txt",{encoding: 'utf8'});
 const readline = require('readline');
 const prefix = '!';
-
+// client.channels.cache.get('785959804166340620').send('sddddddddddddddd').then(msg => {
+	// let embed = new Discord.MessageEmbed() //For discord v11 Change to new Discord.RichEmbed()
+        // .setDescription(`g`)
+    // msg.edit(embed)
+// })
 
 client.on('ready', () => {
 	client.user.setActivity("Kocham cię Wiktor <3"); 
@@ -223,6 +227,8 @@ output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
+
+
 fs.appendFile("Odpowiedzi.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', (err) => {
   if (err) throw err;
   console.log('The "data to append" was appended to file!');
@@ -236,13 +242,7 @@ fs.appendFile("Odpowiedzi.html",'<table style="width:100%"><tr> <th>'+output+'</
   files: [
     "Odpowiedzi.html"
   ]
-  }).then(() => message.react('1️⃣'))
-			.then(() => message.react('2️⃣'))
-			.then(() => message.react('3️⃣'))
-			.then(() => message.react('4️⃣'))
-			.then(() => message.react('5️⃣'))
-	.catch(() => console.error('One of the emojis failed to react.'));
-  },2000);
+  })},4000);
    setTimeout(function(){
      fs.unlink('Odpowiedzi.html',function(err){
         if(err) return console.log(err);
