@@ -3,7 +3,6 @@ const client = new Discord.Client();
 
 const http = require('http');
 const fs = require('fs');
-const lineReader = require('line-reader');
 const file = fs.createWriteStream("odpowiedzi.txt");
 const files = fs.createWriteStream("haslo.txt",{encoding: 'utf8'});
 const readline = require('readline');
@@ -182,13 +181,7 @@ var myInterface = readline.createInterface({
 
 
 myInterface.on('line', function (line) {
-var d = new Date();
-var rok = d.getFullYear();
-var sek = d.getSeconds();
-var godzina = d.getHours();
-var minuta = d.getMinutes();
-var dzien = d.getUTCDay(); //sobota niedziela 6,7 ...
-var n = d.toTimeString();
+
 
 
 	var pytanie = line.indexOf( '`', line.indexOf( '`' ) + 1 );
@@ -224,23 +217,29 @@ output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
 
+var d = new Date();
 
-fs.appendFile("Odpowiedzi.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', (err) => {
+var min = d.getMinutes();
+fs.appendFile("Odpowiedzi"+min+".html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', (err) => {
   if (err) throw err;
   console.log('The "data to append" was appended to file!');
 });
 
 
 });
+ var d = new Date();
 
+var min = d.getMinutes();
   setTimeout(function(){
+	 
 	   message.channel.send( {
   files: [
-    "Odpowiedzi.html"
+    "Odpowiedzi"+m+".html"
   ]
   })},4000);
+	   
    setTimeout(function(){
-     fs.unlink('Odpowiedzi.html',function(err){
+     fs.unlink('Odpowiedzi"+m+".html',function(err){
         if(err) return console.log(err);
         console.log('file deleted successfully');
    });  
