@@ -166,11 +166,11 @@ channel.send(exampleEmbed);
   
 
 	if (message.content.startsWith('!test')) {
-		// message.react('1️⃣');
-		// message.react('2️⃣');
-		// message.react('3️⃣');
-		// message.react('4️⃣');
-		// message.react('5️⃣');
+		 message.react('1️⃣');
+		message.react('2️⃣');
+		 message.react('3️⃣');
+		 message.react('4️⃣');
+		 message.react('5️⃣');
 
 			// .then(() => message.react('1️⃣'))
 			// .then(() => message.react('2️⃣'))
@@ -235,7 +235,7 @@ fs.appendFile("odp.html",'<table style="width:100%"><tr> <th>'+output+'</th><th>
 });
 setTimeout(function(){
 	
-	message.channel.send("Testing message.", {
+	message.channel.send("Odpowiedzi", {
   files: [
     "odp.html"
   ]
