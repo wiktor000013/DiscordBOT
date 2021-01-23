@@ -49,43 +49,6 @@ client.channels.cache.get('802159508179910707').send('------------------').then(
 });
 });
 client.on('message', message => {
-let args = message.content.split(' ');
-let command = args.shift().toLowerCase();
-if(command == '!test'){
-
-const file = fs.createWriteStream("Odpowiedzi.txt",{encoding: 'utf8'});
-const files = fs.createWriteStream("haslo.txt",{encoding: 'utf8'});
-
-var countDownDate = new Date("Jun 1, 2021 00:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  console.log(days);
-var channel = client.channels.cache.get('802126945252278294');
-
-channel.setName('Wakacje: ' + days);
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    console.log("");
-  }
-}, 1000);
-
-client.on('message', message => {
 	
 
 	        if (message.channel.id != 802117038058373140){
@@ -127,6 +90,44 @@ if (message.attachments.size > 0) {
 
 }
 	});
+client.on('message', message => {
+let args = message.content.split(' ');
+let command = args.shift().toLowerCase();
+if(command == '!test'){
+
+const file = fs.createWriteStream("Odpowiedzi.txt",{encoding: 'utf8'});
+const files = fs.createWriteStream("haslo.txt",{encoding: 'utf8'});
+
+var countDownDate = new Date("Jun 1, 2021 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  console.log(days);
+var channel = client.channels.cache.get('802126945252278294');
+
+channel.setName('Wakacje: ' + days);
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    console.log("");
+  }
+}, 1000);
+
+
 	if(message.author.id == 568073544337195009)
 			{
 
