@@ -43,7 +43,7 @@ client.channels.cache.get('802159508179910707').send('------------------').then(
 	setInterval(function(){
 		  var d = new Date();
   var n = d.getDay();
-  var h = d.getHours();
+  var h = d.getHours() +1;
   msg.edit("```Hasło: "+120 * h * n * 18 + "```");
 	},1000);
 	
