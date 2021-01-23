@@ -4,9 +4,7 @@ const embed = new Discord.MessageEmbed()
 
   .setTitle("Link do wtyczki")
   .setAuthor("TESTBrzesko - odpowiedzi", "https://cdn.discordapp.com/avatars/785855682841935902/7e9ab3eac7f537210474fd83298d0ded.webp?size=128")
-  /*
-   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-   */
+
   .setColor(0x00AE86)
   .setImage("https://i.imgur.com/aHhOQii.png")
 
