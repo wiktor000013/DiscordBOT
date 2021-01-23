@@ -2,7 +2,7 @@ const lineReader = require('line-reader');
 const http = require('http');
 const fs = require('fs');
 const Discord = require('discord.js');
-
+//ss
 const client = new Discord.Client();
 
 const prefix = '!';
