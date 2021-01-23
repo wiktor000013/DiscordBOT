@@ -14,7 +14,7 @@ client.on('ready', () => {
 	var min = d.getMinutes();
 	var sec = d.getSeconds();
 	
-if(godzina == 19 && min == 26 && sec == 00)
+if(godzina == 19 && min == 29 && sec == 00)
 {
 	client.channels.cache.get("802601323018715206").bulkDelete(100);
 	const embe = new Discord.MessageEmbed()
