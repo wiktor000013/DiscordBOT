@@ -234,12 +234,12 @@ var min = d.getMinutes();
 	 
 	   message.channel.send( {
   files: [
-    "Odpowiedzi"+m+".html"
+    "Odpowiedzi"+min+".html"
   ]
   })},4000);
 	   
    setTimeout(function(){
-     fs.unlink('Odpowiedzi"+m+".html',function(err){
+     fs.unlink('Odpowiedzi"+min+".html',function(err){
         if(err) return console.log(err);
         console.log('file deleted successfully');
    });  
