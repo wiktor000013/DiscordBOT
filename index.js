@@ -236,15 +236,18 @@ var min = d.getMinutes();
   files: [
     "Odpowiedzi"+min+".html"
   ]
-  })},4000);
-	   
-   setTimeout(function(){
-     fs.unlink('Odpowiedzi"+min+".html',function(err){
+
+  })
+	    setTimeout(function(){
+     fs.unlink('Odpowiedzi'+min+'.html',function(err){
         if(err) return console.log(err);
         console.log('file deleted successfully');
    });  
    },5000);
 
+  },4000);
+	   
+ 
 	
 // message.channel.send("some text", {file: rok+"-"+godzina+"-"+minuta+"-"+dzien+".html" })
 	}
