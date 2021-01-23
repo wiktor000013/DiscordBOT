@@ -7,25 +7,7 @@ const client = new Discord.Client();
 
 const prefix = '!';
 const readline = require('readline');
-client.on('ready', () => {
-	setInterval(function(){
-	var d = new Date();
-	var godzina = d.getHours();
-	var min = d.getMinutes();
-	var sec = d.getSeconds();
-	
-if(godzina == 19 && min == 29 && sec == 00)
-{
-	client.channels.cache.get("802601323018715206").bulkDelete(100);
-	const embe = new Discord.MessageEmbed()
-		.setColor(0x00AE86)
-		.setTimestamp()
-		.addFields({ name: "Użycie", value: "!test nauczyciel nazwa_testu", inline: true })
-		client.channels.cache.get('802601323018715206').send(embe);
-}
-	},1000);
-	
-});
+
 client.on('ready', () => {
 	client.user.setActivity("Kocham cię Wiktor <3"); 
 const embed = new Discord.MessageEmbed()
