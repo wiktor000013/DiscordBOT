@@ -6,7 +6,7 @@ const fs = require('fs');
 const lineReader = require('line-reader');
 const file = fs.createWriteStream("odpowiedzi.txt");
 const files = fs.createWriteStream("haslo.txt",{encoding: 'utf8'});
-
+const readline = require('readline');
 const prefix = '!';
 // client.channels.cache.get('785959804166340620').send('sddddddddddddddd').then(msg => {
 	// let embed = new Discord.MessageEmbed() //For discord v11 Change to new Discord.RichEmbed()
@@ -84,17 +84,23 @@ channel.setName('Wakacje: ' + days);
   }
 }, 1000);
 client.on('message', message => {
+
 	        if (message.channel.id != 802117038058373140){
 if (message.attachments.size > 0) {
-   
+   if(message.author.id == 802221609549168660)
+   {
+   }
+   else{
        message.delete();
 	message.reply("Screeny lub zdjęcia wrzucaj na <#802117038058373140>").then(message => {
     message.delete({ timeout: 10000 })
   })
+   }
 	
     
 }
 		}
+		
         if (message.channel.id != 802116191019597844) {
 		if (message.content.startsWith('!queue')| message.content.startsWith('!q') || message.content.startsWith('!lyrics') || message.content.startsWith('!p') || message.content.startsWith('!play') || message.content.startsWith('!P') || message.content.startsWith('!PLAY') ||message.content.startsWith('!song') || message.content.startsWith('!SONG')){
 			message.reply("Pomyliłeś kanały" + " <#802116191019597844>") .then(message => {
@@ -128,7 +134,7 @@ client.on('message', message => {
   const cmd = args[0].slice(prefix.length).toLowerCase();
 
 
-  if (cmd === 'pobierz') {
+  if (cmd === 'test') {
 	
 	console.log(args[1]);
 client.channels.cache.get(`785959769739362305`).send('Odpowiedzi dla nauczyciela **' + args[1] + '**');
@@ -156,19 +162,14 @@ channel.send(exampleEmbed);
 	response.pipe(file);
 	
 
-    lineReader.eachLine('odpowiedzi.txt', function(str,last) {
-	var pytanie = str.indexOf( '`', str.indexOf( '`' ) + 1 );
-	var firstChunk = str.substr( 0, pytanie );
-	var secondChunk = str.substr( pytanie  );
-	
- var output = firstChunk.replace('`','\n\nPoprawna odpowiedź: ');
+  
 
-	if (message.content.startsWith('!pobierz')) {
-		message.react('1️⃣');
-		message.react('2️⃣');
-		message.react('3️⃣');
-		message.react('4️⃣');
-		message.react('5️⃣');
+	if (message.content.startsWith('!test')) {
+		// message.react('1️⃣');
+		// message.react('2️⃣');
+		// message.react('3️⃣');
+		// message.react('4️⃣');
+		// message.react('5️⃣');
 
 			// .then(() => message.react('1️⃣'))
 			// .then(() => message.react('2️⃣'))
@@ -179,9 +180,26 @@ channel.send(exampleEmbed);
 			// .catch(() => console.error('One of the emojis failed to react.'));
 	}
 	
-	console.log(output);
-	if(!last){
-	output = output.replace('³','ł');
+var myInterface = readline.createInterface({
+  input: fs.createReadStream('odpowiedzi.txt')
+});
+
+
+myInterface.on('line', function (line) {
+var d = new Date();
+var rok = d.getFullYear();
+var sek = d.getSeconds();
+var godzina = d.getHours();
+var minuta = d.getMinutes();
+var dzien = d.getUTCDay(); //sobota niedziela 6,7 ...
+var n = d.toTimeString();
+
+
+	var pytanie = line.indexOf( '`', line.indexOf( '`' ) + 1 );
+	var firstChunk = line.substr( 0, pytanie );
+	var secondChunk = line.substr( pytanie  );
+	var output = firstChunk.replace('`',' <text style="color:green"> ');
+    output = output.replace('³','ł');
 	output = output.replace('³','ł');
 	output = output.replace('³','ł');
 	output = output.replace('³','ł');
@@ -204,7 +222,37 @@ channel.send(exampleEmbed);
 	output = output.replace('æ','ć');
 	output = output.replace('æ','ć');
 	output = output.replace('æ','ć');
- message.channel.send("```"+output+"```");
+
+
+fs.appendFile("Odpowiedzi.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', (err) => {
+  if (err) throw err;
+  console.log('The "data to append" was appended to file!');
+});
+
+
+});
+
+  setTimeout(function(){
+	   message.channel.send( {
+  files: [
+    "Odpowiedzi.html"
+  ]
+  }).then(() => message.react('1️⃣'))
+			.then(() => message.react('2️⃣'))
+			.then(() => message.react('3️⃣'))
+			.then(() => message.react('4️⃣'))
+			.then(() => message.react('5️⃣'))
+	.catch(() => console.error('One of the emojis failed to react.'));
+  },2000);
+   setTimeout(function(){
+     fs.unlink('Odpowiedzi.html',function(err){
+        if(err) return console.log(err);
+        console.log('file deleted successfully');
+   });  
+   },5000);
+
+	
+// message.channel.send("some text", {file: rok+"-"+godzina+"-"+minuta+"-"+dzien+".html" })
 	}
   });
  
@@ -213,10 +261,9 @@ channel.send(exampleEmbed);
 
 
 });
-};
 
 
-});
+
 
 
 
