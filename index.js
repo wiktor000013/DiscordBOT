@@ -146,7 +146,7 @@ const request = http.get("http://www.test.brzesko.edu.pl/" + args[0] + '/testy/'
 	console.log("http://www.test.brzesko.edu.pl/" + args[0] + '/testy/' +args[1]);
 
   
-   if(response.statusCode == 404 || response.statusCode == 200){
+   if(response.statusCode == 404){
 		 const channel = client.channels.cache.get('785959769739362305');
 const exampleEmbed = new Discord.MessageEmbed()
 	.setColor('#8B0000')
