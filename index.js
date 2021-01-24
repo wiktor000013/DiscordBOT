@@ -33,7 +33,7 @@ var channel = client.channels.cache.get('802126945252278294');
 channel.setName('Wakacje: ' + days);
   // If the count down is finished, write some text
   if (distance < 0) {
-    clearInterval(x);
+    clearInterval(xs);
     console.log("");
   }
 }, 1000);
