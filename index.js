@@ -117,7 +117,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  console.log(days);
+
 var channel = client.channels.cache.get('802126945252278294');
 
 channel.setName('Wakacje: ' + days);
@@ -146,11 +146,11 @@ const request = http.get("http://www.test.brzesko.edu.pl/" + args[0] + '/testy/'
 	console.log("http://www.test.brzesko.edu.pl/" + args[0] + '/testy/' +args[1]);
 
   
-   if(response.statusCode == 404){
-		 const channel = client.channels.cache.get('785959769739362305');
+   if(response.statusCode == 404 || response.statusCode == 301){
+		 const channel = client.channels.cache.get('802601323018715206');
 const exampleEmbed = new Discord.MessageEmbed()
 	.setColor('#8B0000')
-	.setTitle('404 ERROR')
+	.setTitle(response.statusCode+' ERROR')
 	.setDescription('Nie znaleziono testu')
 	.setTimestamp()
 channel.send(exampleEmbed);
@@ -227,7 +227,7 @@ output = output.replace('¶','ś');
 
 
 
-fs.appendFile("odp.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', (err) => {
+fs.appendFile("odp.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', 'utf8', function (err)  {
   if (err) throw err;
 
 });
