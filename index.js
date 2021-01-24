@@ -150,7 +150,7 @@ const request = http.get("http://www.test.brzesko.edu.pl/" + args[0] + '/testy/'
 		 const channel = client.channels.cache.get('785959769739362305');
 const exampleEmbed = new Discord.MessageEmbed()
 	.setColor('#8B0000')
-	.setTitle('ERROR')
+	.setTitle('404 ERROR')
 	.setDescription('Nie znaleziono testu')
 	.setTimestamp()
 channel.send(exampleEmbed);
@@ -227,7 +227,7 @@ output = output.replace('¶','ś');
 
 
 
-fs.appendFile("odp.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', 'utf8', function (err)  {
+fs.appendFile("odp.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', (err) => {
   if (err) throw err;
 
 });
