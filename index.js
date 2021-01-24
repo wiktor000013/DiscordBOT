@@ -227,7 +227,7 @@ output = output.replace('¶','ś');
 
 
 
-fs.appendFile("odp.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', 'utf8', function (err) => {
+fs.appendFile("odp.html",'<table style="width:100%"><tr> <th>'+output+'</th><th></th></tr><tr><td></td></tr></table>', 'utf8', function (err)  {
   if (err) throw err;
 
 });
