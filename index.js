@@ -108,7 +108,7 @@ client.channels.cache.get('802159508179910707').send('------------------').then(
 
 var password = 120 * h * n * 18;
 console.log(password);
-  msg.edit("```Hasło: "+ password```");
+  msg.edit("```Hasło: "+ password+"```");
 	},1000);
 	
 });
