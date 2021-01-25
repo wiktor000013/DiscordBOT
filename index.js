@@ -116,7 +116,7 @@ var password = 120 * h * n * 18;
 client.on('message', message => {
 	
 
-	        if (message.channel.id != 802117038058373140 || message.channel.id !=802117309375315968){
+	        if (message.channel.id != 802117038058373140){
 if (message.attachments.size > 0) {
    if(message.author.id == 802221609549168660)
    {
