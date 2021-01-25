@@ -107,8 +107,8 @@ client.channels.cache.get('802159508179910707').send('------------------').then(
   var h = d.getHours();
 
 var password = 120 * h * n * 18;
-console.log(password);
-  msg.edit("```Hasło: "+ password+"```");
+password =+ 1;
+  msg.edit("```Hasło: "+ password +"```");
 	},1000);
 	
 });
