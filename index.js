@@ -121,8 +121,8 @@ if (message.attachments.size > 0) {
    if(message.author.id == 802221609549168660)
    {
    }else{
-       message.delete();
-	message.reply("Screeny lub zdjęcia wrzucaj na <#802117038058373140>").then(message => {
+       
+	message.reply("Screeny lub zdjęcia wrzucaj na <#802117038058373140> lub <#802117309375315968>").then(message => {
     message.delete({ timeout: 10000 })
   })
    }
