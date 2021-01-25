@@ -9,7 +9,7 @@ const prefix = '!';
 const readline = require('readline');
 
 client.on('ready', () => {
-var countDownDate = new Date("Jun 1, 2021 00:00:00").getTime();
+var countDownDate = new Date("Jun 25, 2021 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
