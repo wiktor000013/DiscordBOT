@@ -7,6 +7,8 @@ const client = new Discord.Client();
 
 const prefix = '!';
 const readline = require('readline');
+
+client.on('ready', () => {
 const embed = new Discord.MessageEmbed()
 
   .setTitle("Link do wtyczki")
@@ -48,7 +50,6 @@ var password = 120 * h * n * 18;
 	},50000);
 	
 });
-client.on('ready', () => {
 var countDownDate = new Date("Jun 25, 2021 00:00:00").getTime();
 
 // Update the count down every 1 second
