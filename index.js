@@ -9,6 +9,7 @@ const prefix = '!';
 const readline = require('readline');
 
 client.on('ready', () => {
+	//ss
 	client.channels.cache.get('802159508179910707').bulkDelete(10);
 const embed = new Discord.MessageEmbed()
 
