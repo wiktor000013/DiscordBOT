@@ -114,7 +114,7 @@ channel.setName('Nowy rok: ' + days);
 
 
 
-	client.user.setActivity("Kocham cię Wiktor <3"); 
+	client.user.setActivity("PH - Model"); 
 
 });
 client.on('message', message => {
