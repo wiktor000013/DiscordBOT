@@ -120,6 +120,9 @@ client.on('message', message => {
 	
 if(message.channel.id == 806114399445188609)
 {
+	 if(message.author.id == 802221609549168660)
+	 {
+	 }else{
 	const emb = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('STS')
@@ -130,6 +133,7 @@ if(message.channel.id == 806114399445188609)
  const channe = client.channels.cache.get('806114399445188609');
 channe.send(emb);
 	message.delete();
+	 }
 }
 	        if (message.channel.id != 802117038058373140){
 if (message.attachments.size > 0) {
