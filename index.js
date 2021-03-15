@@ -121,6 +121,7 @@ client.on('message', message => {
 	
 if(message.channel.id == 806114399445188609)
 {
+	if(isNaN(message.content){}else{message.delete();message.reply("Tylko numer kuponu");message.delete({ timeout: 10000 })}
 	 if(message.author.id == 802221609549168660 || message.author.id == 159985870458322944 || message.author.id == 234395307759108106)
 	 {
 	 }else{
@@ -133,6 +134,7 @@ if(message.channel.id == 806114399445188609)
 channe.send(emb);
 	message.delete();
 	 }
+	
 }
 	        if (message.channel.id != 802117038058373140){
 if (message.attachments.size > 0) {
