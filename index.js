@@ -122,14 +122,13 @@ if(message.channel.id == 806114399445188609)
 {
 	const emb = new Discord.MessageEmbed()
 	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setTitle('STS')
+
 	.setDescription(message)
 	.setTimestamp()
 
-
-channel.send(emb);
+ const channe = client.channels.cache.get('806114399445188609');
+channe.send(emb);
 	message.delete();
 }
 	        if (message.channel.id != 802117038058373140){
