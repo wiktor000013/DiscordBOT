@@ -118,7 +118,20 @@ channel.setName('Nowy rok: ' + days);
 });
 client.on('message', message => {
 	
+if(message.channel.id == 806114399445188609)
+{
+	const emb = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription(message)
+	.setTimestamp()
 
+
+channel.send(emb);
+	message.delete();
+}
 	        if (message.channel.id != 802117038058373140){
 if (message.attachments.size > 0) {
    if(message.author.id == 802221609549168660)
