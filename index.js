@@ -27,6 +27,7 @@ const embed = new Discord.MessageEmbed()
   .setURL("https://addons.opera.com/pl/extensions/details/b79651613cd59a27d60247060a64ec328fa6c3e2/")
 
   /*
+  *xddd
    * Inline fields may not display as inline if the thumbnail and/or image is too big.
    */
   .addFields({ name: "Przeglądarka", value: "Opera", inline: true })
