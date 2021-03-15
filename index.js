@@ -121,13 +121,11 @@ client.on('message', message => {
 	
 if(message.channel.id == 806114399445188609)
 {
-	 if(message.author.id == 802221609549168660)
+	 if(message.author.id == 802221609549168660 || message.author.id == 159985870458322944 || message.author.id == 234395307759108106)
 	 {
 	 }else{
 	const emb = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('STS')
-
+	.setColor('#66ff33')
 	.setDescription(message)
 	.setTimestamp()
 
