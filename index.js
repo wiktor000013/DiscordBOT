@@ -21,7 +21,7 @@ const embed = new Discord.MessageEmbed()
   .setColor(0x00AE86)
   .setImage("https://i.imgur.com/aHhOQii.png")
 
- 
+ //
 
   .setTimestamp()
   .setURL("https://addons.opera.com/pl/extensions/details/b79651613cd59a27d60247060a64ec328fa6c3e2/")
