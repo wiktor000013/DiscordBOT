@@ -131,6 +131,10 @@ if(message.channel.id == 806114399445188609)
 
  const channe = client.channels.cache.get('806114399445188609');
 channe.send(emb);
+const reaction = collected.first();
+		 if (reaction.emoji.name === '👍') {
+			 message.reply('you reacted with a thumbs up.');
+		 }
 	message.delete();
 	 }
 	
