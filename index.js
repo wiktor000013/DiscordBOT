@@ -3,14 +3,67 @@ const http = require('http');
 const fs = require('fs');
 const Discord = require('discord.js');
 //ss
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
 const prefix = '!';
 const readline = require('readline');
 
 client.on('ready', () => {
 	//ss
-	
+
+
+client.on('messageReactionAdd', async (reaction, user) => {
+	// When we receive a reaction we check if the reaction is partial or not
+	if (reaction.partial) {
+		// If the message this reaction belongs to was removed the fetching might result in an API error, which we need to handle
+		try {
+			await reaction.fetch();
+		} catch (error) {
+			console.error('Something went wrong when fetching the message: ', error);
+			// Return as `reaction.message.author` may be undefined/null
+			return;
+		}
+	}
+	// Now the message has been cached and is fully available
+
+
+	if(user.id == 568073544337195009 && reaction.emoji.name == "🗑️")
+	{
+		var msg = reaction.message;
+		 reaction.message.delete();
+
+	var m;
+	if(msg.content == "")
+	{
+			m=msg.attachments.attachment;
+		
+			msg.attachments.forEach(attachment => {
+  
+ m = attachment.url;
+  console.log(url)
+});
+			
+	}else{
+		m=msg.content
+	}
+	const deleted = new Discord.MessageEmbed()
+	.setColor('#ff0066')
+	.setAuthor(msg.author.username)
+
+	.addFields(
+		{ name: 'Zawartość', value: m}
+		)
+
+
+	.setTimestamp()
+
+
+ const chann = client.channels.cache.get('826529429722497065');
+chann.send(deleted);
+	}
+
+
+});
 var countDownDate = new Date("Jun 25, 2021 00:00:00").getTime();
 
 // Update the count down every 1 second
@@ -75,6 +128,8 @@ channel.setName('Nowy rok: ' + days);
 	client.user.setActivity("PH - Model"); 
 
 });
+
+
 client.on('message', message => {
 	
 if(message.channel.id == 806114399445188609)
