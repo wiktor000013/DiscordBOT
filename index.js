@@ -136,7 +136,7 @@ function pog(){
 		}
 	});
 }
-setInterval(pog,43200000);
+setInterval(pog,7200000);
 pog();
 var countDownDates = new Date("Jan 1 , 2022 00:00:00").getTime();
 
