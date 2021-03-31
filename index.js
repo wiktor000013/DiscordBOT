@@ -2,14 +2,33 @@ const lineReader = require('line-reader');
 const http = require('http');
 const fs = require('fs');
 const Discord = require('discord.js');
-//ss
-const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
+const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+var weather = require('openweather-apis');
 const prefix = '!';
 const readline = require('readline');
-
+	weather.setLang('pl');
+	weather.setCity('Brzesko');
+ 	weather.setUnits('metric');
+	 	weather.setAPPID("dd673bda68b10d4951775b3f1c9e8f89");
 client.on('ready', () => {
-	//ss
+client.on('message', message => {
+	 if (!message.content.startsWith(prefix)) return;
+	 const args = message.content.trim().split(/ +/g);
+	 const cmd = args[0].slice(prefix.length).toLowerCase();
+	if (cmd === 'ping') message.reply('pong');
+	 if (cmd === 'rand') {
+    if (!args[1]) return console.log('Podaj liczbę drugą');
+    if (!args[2]) return console.log('Podaj liczbę trzecią');
+
+		x = Math.floor((Math.random() * (args[2] - args[1]) + args[1]));
+		
+	
+
+message.channel.send(x);
+    // command code
+  }
+});
 
 
 client.on('messageReactionAdd', async (reaction, user) => {
@@ -27,10 +46,18 @@ client.on('messageReactionAdd', async (reaction, user) => {
 	// Now the message has been cached and is fully available
 
 
-	if(user.id == 568073544337195009 && reaction.emoji.name == "🗑️")
+	if(reaction.emoji.name == "🗑️")
 	{
 		var msg = reaction.message;
-		 reaction.message.delete();
+		
+		console.log(user);
+		console.log(reaction);
+		// if(user.id == reaction.message.author.id)
+		// {
+			// return;
+		// }
+		// console.log(user);
+reaction.message.delete();
 
 	var m;
 	if(msg.content == "")
@@ -40,7 +67,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 			msg.attachments.forEach(attachment => {
   
  m = attachment.url;
-  console.log(url)
+ 
 });
 			
 	}else{
@@ -53,7 +80,9 @@ client.on('messageReactionAdd', async (reaction, user) => {
 	.addFields(
 		{ name: 'Zawartość', value: m}
 		)
-
+.addFields(
+		{ name: 'Usunięte przez', value: "<@" + user.id + ">"}
+		)
 
 	.setTimestamp()
 
@@ -94,6 +123,21 @@ channel.setName('Wakacje: ' + days);
 }, 1000);
 
 
+var pogodaChannel = client.channels.cache.get('826853665004191774');
+function pog(){
+	weather.getSmartJSON(function(err, smart){
+		console.log(smart);
+		if(smart.rain != 0)
+		{
+			pogodaChannel.setName('Pogoda: ' +Math.floor(smart.temp)+"°C 🌧️");
+		}
+		else{
+			pogodaChannel.setName('Pogoda: ' +Math.floor(smart.temp) +"°C");
+		}
+	});
+}
+setInterval(pog,43200000);
+pog();
 var countDownDates = new Date("Jan 1 , 2022 00:00:00").getTime();
 
 // Update the count down every 1 second
