@@ -93,7 +93,7 @@ chann.send(deleted);
 
 
 });
-var countDownDate = new Date("Jun 25, 2021 00:00:00").getTime();
+var countDownDate = new Date("Jun 26, 2021 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
