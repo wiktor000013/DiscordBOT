@@ -1,1 +1,1 @@
-Worker: npm i openweather-apis
+Worker: node indes.js
