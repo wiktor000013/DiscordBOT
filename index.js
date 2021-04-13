@@ -310,7 +310,11 @@ myInterface.on('line', function (line) {
 	var firstChunk = line.substr( 0, pytanie );
 	var secondChunk = line.substr( pytanie  );
 	var output = firstChunk.replace('`',' <text style="color:green"> ');
-    output = output.replace('³','ł');
+       output = output.replace('³','ł');
+	output = output.replace('³','ł');
+	output = output.replace('³','ł');
+	output = output.replace('³','ł');
+	output = output.replace('³','ł');
 	output = output.replace('³','ł');
 	output = output.replace('³','ł');
 	output = output.replace('³','ł');
@@ -319,25 +323,56 @@ myInterface.on('line', function (line) {
 	output = output.replace('¿','ż');
 	output = output.replace('¿','ż');
 	output = output.replace('¿','ż');
+	output = output.replace('¿','ż');
+	output = output.replace('¿','ż');
+	output = output.replace('¿','ż');
+	output = output.replace('¿','ż');
 	
 	output = output.replace('±','ą');
 	output = output.replace('±','ą');
 	output = output.replace('±','ą');
 	output = output.replace('±','ą');
+	output = output.replace('±','ą');
+	output = output.replace('±','ą');
+	output = output.replace('±','ą');
+	output = output.replace('±','ą');
+	output = output.replace('±','ą');
 	
 	output = output.replace('ê','ę');
 	output = output.replace('ê','ę');
 	output = output.replace('ê','ę');
 	output = output.replace('ê','ę');
+	output = output.replace('ê','ę');
+	output = output.replace('ê','ę');
+	output = output.replace('æ','ć');
+	output = output.replace('æ','ć');
+	output = output.replace('æ','ć');
+	output = output.replace('æ','ć');
 	output = output.replace('æ','ć');
 	output = output.replace('æ','ć');
 	output = output.replace('æ','ć');
 	output = output.replace('æ','ć');
 
 output = output.replace('¶','ś');
+output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
 	output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
+	output = output.replace('¶','ś');
+	
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
+	output = output.replace('¼','ź');
 
 
 
